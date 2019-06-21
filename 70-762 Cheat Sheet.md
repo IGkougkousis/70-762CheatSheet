@@ -5,9 +5,10 @@ Related questions from the pdf are in superscript like this<sup>1</sup>.
 Questions with the same scenario:
 
 - 89-91 Azure SQL Database Tiers.
-- 92-94 Query using nonclustered index takes too long to complete.
+- 92-94, 117 Query using nonclustered index takes too long to complete.
 - 111, 114 `TODO: This is similar to questions before 89, need to update`
 - 115 `TODO: This is similar to questions before 89, need to update`
+- 116 `TODO: This is similar to questions before 89, need to update`
 
 Unique questions:
 
@@ -27,6 +28,19 @@ Unique questions:
 - 108 Syntax for stored procedure
 - 109 query store execution plan
 - 110 sys.dm_exec_sessions, SQL permisisons
+- 118 Describe constraints
+- 119 Create Indexed View
+- 120 Make queries faster
+- 121 Make reports faster, showing only committed
+- 122 Same as 120
+- 123 Abort transaction if error occurs
+- 124 After insert trigger syntax
+- 125 Create view that adds rows to table
+- 126 Create Index
+- 127 Optimize ETL process
+- 128 Stored Procedure, Transactions
+- 129 Stored Procedure, syntax
+- 130
 
 ## Glossary Of Terms
 
@@ -36,6 +50,7 @@ OLAP: On Line Analytics Processing
 CLR: Common Language Runtime
 SSRS: SQL Server Reporting Services
 SSIS: SQL Server Integration Services
+ETL: Extract, Transform, Load
 
 ## Tables
 
@@ -43,8 +58,10 @@ Links
 
 - [Tables](https://docs.microsoft.com/en-us/sql/relational-databases/tables/tables?view=sql-server-2017)
 - <sup>85</sup> [Partitioned Tables and Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/partitions/partitioned-tables-and-indexes?view=sql-server-2017)
+- <sup>120</sup> [Understanding the SQL Server NOLOCK hint](https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/)
+- <sup>127</sup> [Faster temp table and table variable by using memory optimization](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/faster-temp-table-and-table-variable-by-using-memory-optimization?view=sql-server-2017)
 
-Related Questions: <sup>80,86</sup>
+Related Questions: <sup>80,86,120,122,127</sup>
 
 ## Options
 
@@ -63,7 +80,7 @@ Links:
 - [Reorganize and Rebuild Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-2017)
 - [Columnstore indexes: Overview](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/columnstore-indexes-overview?view=sql-server-2017)
 
-Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97,102,107,111</sup>
+Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97,102,107,111,117,126</sup>
 
 ## Triggers
 
@@ -72,21 +89,22 @@ Links:
 - [CREATE TRIGGER (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql?view=sql-server-2017)
 - <sup>101</sup> [Logon Triggers](https://docs.microsoft.com/en-us/sql/relational-databases/triggers/logon-triggers?view=sql-server-2017)
 
-Related Questions: <sup>68,78,101</sup>
+Related Questions: <sup>68,78,101,116, 124</sup>
 
 ## Transactions
 
-Related Questions: <sup>65,66,82,84,87,95,96,103,106,114</sup>
+Related Questions: <sup>65,66,82,84,87,95,96,103,106,114,121,123,128,129</sup>
 
-- **XACT_STATE** Is a scalar function that reports the user transaction state of a current running request. XACT_STATE indicates whether the request has an active user transaction, and whether the transaction is capable of being committed. **XACT_ABORT** must be ON to rollback transactions. Values:
+- <sup>123</sup> **XACT_STATE** Is a scalar function that reports the user transaction state of a current running request. XACT_STATE indicates whether the request has an active user transaction, and whether the transaction is capable of being committed. **XACT_ABORT** must be ON to rollback transactions. Values:
   - 1: The current request has an active user transaction. The request can perform any actions, including writing data and committing the transaction.
   - 0: There is no active user transaction for the current request.
   - -1: The current request has an active user transaction, but an error has occurred that has caused the transaction to be classified as an uncommittable transaction.
 - <sup>87</sup> [Manage the size of the transaction log file](https://docs.microsoft.com/en-us/sql/relational-databases/logs/manage-the-size-of-the-transaction-log-file?view=sql-server-2017)
-- <sup>82,84,95,114</sup> Isolation Levels, Row versioning
+- <sup>82,84,95,114,128</sup> Isolation Levels, Row versioning
   - [Transaction Locking and Row Versioning Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-2017)
   - [SET TRANSACTION ISOLATION LEVEL (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql?view=sql-server-2017)
 - <sup>96</sup> [Transactions with Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/transactions-with-memory-optimized-tables?view=sql-server-2017)
+- [SAVE TRANSACTION (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/save-transaction-transact-sql?view=sql-server-2017&viewFallbackFrom=sql-ser)
 
 ## Functions / Stored Procedures
 
@@ -102,7 +120,11 @@ Related Questions: <sup>73,74,75,79,98,100,105,106,108</sup>
 
 ## Constraints
 
-Related Questions: <sup>67, 69</sup>
+Links:
+
+- [Unique Constraints and Check Constraints](https://docs.microsoft.com/en-us/sql/relational-databases/tables/unique-constraints-and-check-constraints?view=sql-server-2017)
+
+Related Questions: <sup>67,69,118,130</sup>
 
 - **CHECK**: The CHECK constraint is used to limit the value range that can be placed in a column. If you define a CHECK constraint on a single column it allows only certain values for this column. If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row. Examples:
 - **Cascading Referential Integrity**: Are the foreign key constraints which tell SQL Server to perform certain actions whenever a user attempts to delete or update a primary key to which an existing foreign keys point. Default: NO ACTION. Other available actions: SET NULL, CASCADE, SET DEFAULT.
@@ -133,8 +155,10 @@ Date/Time: <sup>59,60,61</sup>
 Links:
 
 - [CREATE VIEW (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-view-transact-sql?view=sql-server-2017)
+- <sup>119</sup> [Create Indexed Views](https://docs.microsoft.com/en-us/sql/relational-databases/views/create-indexed-views?view=sql-server-2017)
+- <sup>125</sup> [Creating and Optimizing Views in SQL Server](http://www.informit.com/articles/article.aspx?p=130855&seqNum=4)
 
-Related Questions: <sup>83</sup>
+Related Questions: <sup>83,119</sup>
 
 ## Other
 
