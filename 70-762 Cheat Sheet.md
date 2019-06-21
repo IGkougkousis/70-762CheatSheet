@@ -40,7 +40,7 @@ Unique questions:
 - 127 Optimize ETL process
 - 128 Stored Procedure, Transactions
 - 129 Stored Procedure, syntax
-- 130
+- 130 Constraint
 
 ## Glossary Of Terms
 
@@ -80,7 +80,7 @@ Links:
 - [Reorganize and Rebuild Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-2017)
 - [Columnstore indexes: Overview](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/columnstore-indexes-overview?view=sql-server-2017)
 
-Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97,102,107,111,117,126</sup>
+Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97,102,107,111,117,126,132</sup>
 
 ## Triggers
 
@@ -115,8 +115,9 @@ Links:
 - <sup>98</sup> [Use Table-Valued Parameters (Database Engine)](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine?view=sql-server-2017)
 - <sup>100</sup> [Return Data from a Stored Procedure](https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/return-data-from-a-stored-procedure?view=sql-server-2017)
 - <sup>105</sup> [A Guide to Query Processing for Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables?view=sql-server-2017)
+- <sup>135</sup> [Using a Stored Procedure with Output Parameters](https://docs.microsoft.com/en-us/sql/connect/jdbc/using-a-stored-procedure-with-output-parameters?view=sql-server-2017)
 
-Related Questions: <sup>73,74,75,79,98,100,105,106,108</sup>
+Related Questions: <sup>73,74,75,79,98,100,105,106,108,135</sup>
 
 ## Constraints
 
@@ -185,3 +186,6 @@ If many related entries appear, they can be merged into a single category.
 - <sup>110</sup> [sys.dm_exec_sessions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql?view=sql-server-2017)
 - [SQL Server Profiler](https://docs.microsoft.com/en-us/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-2017)
 - <sup>113</sup> [Performance Statistics Event Class](https://docs.microsoft.com/en-us/sql/relational-databases/event-classes/performance-statistics-event-class?view=sql-server-2017)
+- <sup>131</sup> [SET ANSI_DEFAULTS (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql?view=sql-server-2017). When enabled (ON), this option enables SET IMPLICIT_TRANSACTIONS (and some other options).
+- <sup>133</sup> [Extended events overview](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events?view=sql-server-2017)
+- <sup>134</sup> [sys.dm_tran_locks (Transact-SQL)](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql?view=sql-server-2017)
