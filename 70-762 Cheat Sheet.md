@@ -6,6 +6,8 @@ Questions with the same scenario:
 
 - 89-91 Azure SQL Database Tiers.
 - 92-94 Query using nonclustered index takes too long to complete.
+- 111, 114 `TODO: This is similar to questions before 89, need to update`
+- 115 `TODO: This is similar to questions before 89, need to update`
 
 Unique questions:
 
@@ -13,6 +15,27 @@ Unique questions:
 - 96 Transaction, DELAYED_DURABILITY, explicit/implicit transaction
 - 97 Index, UNIQUE, IGNORE_DUP_KEY, ONLINE
 - 98 Stored Procedure, Table-Valued Parameters, ADO .NET table
+- 99 Deadlocks, trace flags
+- 100 Stored procedure, return data
+- 101 Triggers, LOGON, INSTEAD OF INSERT, DDL
+- 102 Nonclustered Index syntax
+- 103 Transaction, Isolation Levels
+- 104 SQL Server with .NET
+- 105 disk vs memory-optimized tables, modules, functions /stored procedures
+- 106 sp, transactions, isolation levels
+- 107 Index, clustered columnstore
+- 108 Syntax for stored procedure
+- 109 query store execution plan
+- 110 sys.dm_exec_sessions, SQL permisisons
+
+## Glossary Of Terms
+
+SQL: Structured Query Language
+OLTP: On Line Transaction Processing
+OLAP: On Line Analytics Processing
+CLR: Common Language Runtime
+SSRS: SQL Server Reporting Services
+SSIS: SQL Server Integration Services
 
 ## Tables
 
@@ -21,7 +44,7 @@ Links
 - [Tables](https://docs.microsoft.com/en-us/sql/relational-databases/tables/tables?view=sql-server-2017)
 - <sup>85</sup> [Partitioned Tables and Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/partitions/partitioned-tables-and-indexes?view=sql-server-2017)
 
-Related Questions: <sup>80, 86</sup>
+Related Questions: <sup>80,86</sup>
 
 ## Options
 
@@ -38,25 +61,29 @@ Links:
 - [SQL Server Index Architecture and Design Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-index-design-guide?view=sql-server-2017)
 - [CREATE INDEX (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-index-transact-sql?view=sql-server-2017)
 - [Reorganize and Rebuild Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-2017)
+- [Columnstore indexes: Overview](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/columnstore-indexes-overview?view=sql-server-2017)
 
-Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97</sup>
+Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97,102,107,111</sup>
 
 ## Triggers
 
-Related Questions: <sup>68,78</sup>
+Links:
 
-- FOR UPDATE
+- [CREATE TRIGGER (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql?view=sql-server-2017)
+- <sup>101</sup> [Logon Triggers](https://docs.microsoft.com/en-us/sql/relational-databases/triggers/logon-triggers?view=sql-server-2017)
+
+Related Questions: <sup>68,78,101</sup>
 
 ## Transactions
 
-Related Questions: <sup>65,66,82,84,87,95,96</sup>
+Related Questions: <sup>65,66,82,84,87,95,96,103,106,114</sup>
 
 - **XACT_STATE** Is a scalar function that reports the user transaction state of a current running request. XACT_STATE indicates whether the request has an active user transaction, and whether the transaction is capable of being committed. **XACT_ABORT** must be ON to rollback transactions. Values:
   - 1: The current request has an active user transaction. The request can perform any actions, including writing data and committing the transaction.
   - 0: There is no active user transaction for the current request.
   - -1: The current request has an active user transaction, but an error has occurred that has caused the transaction to be classified as an uncommittable transaction.
 - <sup>87</sup> [Manage the size of the transaction log file](https://docs.microsoft.com/en-us/sql/relational-databases/logs/manage-the-size-of-the-transaction-log-file?view=sql-server-2017)
-- <sup>82,84,95</sup> Isolation Levels, Row versioning
+- <sup>82,84,95,114</sup> Isolation Levels, Row versioning
   - [Transaction Locking and Row Versioning Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-2017)
   - [SET TRANSACTION ISOLATION LEVEL (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql?view=sql-server-2017)
 - <sup>96</sup> [Transactions with Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/transactions-with-memory-optimized-tables?view=sql-server-2017)
@@ -69,8 +96,9 @@ Links:
 - [User Defined Functions and Stored Procedures](https://docs.microsoft.com/en-us/sql/analysis-services/multidimensional-models-adomd-net-server/user-defined-functions-and-stored-procedures?view=sql-server-2017)
 - <sup>98</sup> [Use Table-Valued Parameters (Database Engine)](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine?view=sql-server-2017)
 - <sup>100</sup> [Return Data from a Stored Procedure](https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/return-data-from-a-stored-procedure?view=sql-server-2017)
+- <sup>105</sup> [A Guide to Query Processing for Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables?view=sql-server-2017)
 
-Related Questions: <sup>73,74,75,79,98,100</sup>
+Related Questions: <sup>73,74,75,79,98,100,105,106,108</sup>
 
 ## Constraints
 
@@ -110,13 +138,13 @@ Related Questions: <sup>83</sup>
 
 ## Other
 
-Related Questions: <sup>71,75,76,82,84</sup>
+Related Questions: <sup>71,75,76,82,84,104,112</sup>
 
 If many related entries appear, they can be merged into a single category.
 
 - <sup>71</sup> **WRITELOG**:
   - [WRITELOG waittype - Implicit vs. Explicit Transaction: disk or coding issue? ](https://sqltouch.blogspot.com/2013/05/writelog-waittype-implicit-vs-explicit.html)
-- <sup>75</sup> **QUERY_STORE**:
+- <sup>75,109</sup> **QUERY_STORE**:
   - [Monitoring performance by using the Query Store](https://docs.microsoft.com/en-us/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store?view=sql-server-2017)
   - [Best Practice with the Query Store](https://docs.microsoft.com/en-us/sql/relational-databases/performance/best-practice-with-the-query-store?view=sql-server-2017)
 - <sup>76</sup> You need to evaluate schema locking issues, plan cache memory pressure points, and backup I/O.
@@ -129,3 +157,7 @@ If many related entries appear, they can be merged into a single category.
   - <sup>88</sup> [Database Files and Filegroups](https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-files-and-filegroups?view=sql-server-2017)
 - <sup>89,90,91</sup> Azure SQL Database
   - [Service tiers in the DTU-based purchase model](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers-dtu)
+- <sup>104,112</sup> [Introduction to SQL Server CLR Integration](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration)
+- <sup>110</sup> [sys.dm_exec_sessions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql?view=sql-server-2017)
+- [SQL Server Profiler](https://docs.microsoft.com/en-us/sql/tools/sql-server-profiler/sql-server-profiler?view=sql-server-2017)
+- <sup>113</sup> [Performance Statistics Event Class](https://docs.microsoft.com/en-us/sql/relational-databases/event-classes/performance-statistics-event-class?view=sql-server-2017)
