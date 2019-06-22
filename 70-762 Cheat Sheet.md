@@ -9,6 +9,8 @@ Questions with the same scenario:
 - 111, 114 `TODO: This is similar to questions before 89, need to update`
 - 115 `TODO: This is similar to questions before 89, need to update`
 - 116 `TODO: This is similar to questions before 89, need to update`
+- 140 `TODO: This is similar to questions before 89, need to update`
+- 141 `TODO: This is similar to questions before 89, need to update`
 
 Unique questions:
 
@@ -41,6 +43,20 @@ Unique questions:
 - 128 Stored Procedure, Transactions
 - 129 Stored Procedure, syntax
 - 130 Constraint
+- 131
+- 132
+- 133
+- 134
+- 135
+- 136 Optimize query
+- 137 Optimize query
+- 138 Optimize query
+- 139 Optimize query
+- 142 Extended Events targets
+- 143 View
+- 144 Masking, syntax
+- 145 Constraints
+- 146 Index, optimize query
 
 ## Glossary Of Terms
 
@@ -51,6 +67,7 @@ CLR: Common Language Runtime
 SSRS: SQL Server Reporting Services
 SSIS: SQL Server Integration Services
 ETL: Extract, Transform, Load
+ETW: Event Tracing for Windows
 
 ## Tables
 
@@ -79,8 +96,9 @@ Links:
 - [CREATE INDEX (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-index-transact-sql?view=sql-server-2017)
 - [Reorganize and Rebuild Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-2017)
 - [Columnstore indexes: Overview](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/columnstore-indexes-overview?view=sql-server-2017)
+- [Create Filtered Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/create-filtered-indexes?view=sql-server-2017)
 
-Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97,102,107,111,117,126,132</sup>
+Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97,102,107,111,117,126,132,136,137,146</sup>
 
 ## Triggers
 
@@ -89,11 +107,11 @@ Links:
 - [CREATE TRIGGER (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql?view=sql-server-2017)
 - <sup>101</sup> [Logon Triggers](https://docs.microsoft.com/en-us/sql/relational-databases/triggers/logon-triggers?view=sql-server-2017)
 
-Related Questions: <sup>68,78,101,116, 124</sup>
+Related Questions: <sup>68,78,101,116,124</sup>
 
 ## Transactions
 
-Related Questions: <sup>65,66,82,84,87,95,96,103,106,114,121,123,128,129</sup>
+Related Questions: <sup>65,66,82,84,87,95,96,103,106,114,121,123,128,129,140</sup>
 
 - <sup>123</sup> **XACT_STATE** Is a scalar function that reports the user transaction state of a current running request. XACT_STATE indicates whether the request has an active user transaction, and whether the transaction is capable of being committed. **XACT_ABORT** must be ON to rollback transactions. Values:
   - 1: The current request has an active user transaction. The request can perform any actions, including writing data and committing the transaction.
@@ -124,8 +142,9 @@ Related Questions: <sup>73,74,75,79,98,100,105,106,108,135</sup>
 Links:
 
 - [Unique Constraints and Check Constraints](https://docs.microsoft.com/en-us/sql/relational-databases/tables/unique-constraints-and-check-constraints?view=sql-server-2017)
+- [Commonly used SQL Server Constraints: FOREIGN KEY, CHECK and DEFAULT](https://www.sqlshack.com/commonly-used-sql-server-constraints-foreign-key-check-default/)
 
-Related Questions: <sup>67,69,118,130</sup>
+Related Questions: <sup>67,69,118,130,145</sup>
 
 - **CHECK**: The CHECK constraint is used to limit the value range that can be placed in a column. If you define a CHECK constraint on a single column it allows only certain values for this column. If you define a CHECK constraint on a table it can limit the values in certain columns based on values in other columns in the row. Examples:
 - **Cascading Referential Integrity**: Are the foreign key constraints which tell SQL Server to perform certain actions whenever a user attempts to delete or update a primary key to which an existing foreign keys point. Default: NO ACTION. Other available actions: SET NULL, CASCADE, SET DEFAULT.
@@ -159,7 +178,7 @@ Links:
 - <sup>119</sup> [Create Indexed Views](https://docs.microsoft.com/en-us/sql/relational-databases/views/create-indexed-views?view=sql-server-2017)
 - <sup>125</sup> [Creating and Optimizing Views in SQL Server](http://www.informit.com/articles/article.aspx?p=130855&seqNum=4)
 
-Related Questions: <sup>83,119</sup>
+Related Questions: <sup>83,119,138,139,143</sup>
 
 ## Other
 
@@ -168,7 +187,7 @@ Related Questions: <sup>71,75,76,82,84,104,112</sup>
 If many related entries appear, they can be merged into a single category.
 
 - <sup>71</sup> **WRITELOG**:
-  - [WRITELOG waittype - Implicit vs. Explicit Transaction: disk or coding issue? ](https://sqltouch.blogspot.com/2013/05/writelog-waittype-implicit-vs-explicit.html)
+  - [WRITELOG waittype - Implicit vs. Explicit Transaction: disk or coding issue?](https://sqltouch.blogspot.com/2013/05/writelog-waittype-implicit-vs-explicit.html)
 - <sup>75,109</sup> **QUERY_STORE**:
   - [Monitoring performance by using the Query Store](https://docs.microsoft.com/en-us/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store?view=sql-server-2017)
   - [Best Practice with the Query Store](https://docs.microsoft.com/en-us/sql/relational-databases/performance/best-practice-with-the-query-store?view=sql-server-2017)
@@ -189,3 +208,6 @@ If many related entries appear, they can be merged into a single category.
 - <sup>131</sup> [SET ANSI_DEFAULTS (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-defaults-transact-sql?view=sql-server-2017). When enabled (ON), this option enables SET IMPLICIT_TRANSACTIONS (and some other options).
 - <sup>133</sup> [Extended events overview](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events?view=sql-server-2017)
 - <sup>134</sup> [sys.dm_tran_locks (Transact-SQL)](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql?view=sql-server-2017)
+- [Set Operators - UNION (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/set-operators-union-transact-sql?view=sql-server-2017)
+- <sup>142</sup> [SQL Server Extended Events Targets](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-extended-events-targets?view=sql-server-2014)
+- <sup>144</sup> [Dynamic Data Masking](https://docs.microsoft.com/en-us/sql/relational-databases/security/dynamic-data-masking?view=sql-server-2017)
