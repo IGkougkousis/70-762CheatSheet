@@ -1,5 +1,7 @@
 # Exam 70-762: Developing SQL Databases Cheat Sheet
 
+`TODO: remove all blocks like this. that means document is ready`
+
 Related questions from the pdf are in superscript like this<sup>1</sup>.
 
 Questions with the same scenario:
@@ -11,6 +13,8 @@ Questions with the same scenario:
 - 116 `TODO: This is similar to questions before 89, need to update`
 - 140 `TODO: This is similar to questions before 89, need to update`
 - 141 `TODO: This is similar to questions before 89, need to update`
+- 147-148 Optimize query that returns data from two tables. (Partitioned View)
+- 156-160 Case study `Similar to previous questions`
 
 Unique questions:
 
@@ -43,11 +47,11 @@ Unique questions:
 - 128 Stored Procedure, Transactions
 - 129 Stored Procedure, syntax
 - 130 Constraint
-- 131
-- 132
-- 133
-- 134
-- 135
+- 131 Stored Procedure locks
+- 132 Index
+- 133 SQL Server Profiler, Extended Events
+- 134 sys.dm_tran_locks, sys.dm_os_waiting_tasks
+- 135 Stored Procedure OUTPUT parameters
 - 136 Optimize query
 - 137 Optimize query
 - 138 Optimize query
@@ -57,17 +61,26 @@ Unique questions:
 - 144 Masking, syntax
 - 145 Constraints
 - 146 Index, optimize query
+- 149
+- 150
+- 151
+- 152
+- 153 Memory optimized tables, OLTP
+- 154 Stored Procedures in Transaction
+- 155 Db administration, availability groups
 
 ## Glossary Of Terms
 
-SQL: Structured Query Language
-OLTP: On Line Transaction Processing
-OLAP: On Line Analytics Processing
-CLR: Common Language Runtime
-SSRS: SQL Server Reporting Services
-SSIS: SQL Server Integration Services
-ETL: Extract, Transform, Load
-ETW: Event Tracing for Windows
+- SQL: Structured Query Language
+- OLTP: On Line Transaction Processing
+- OLAP: On Line Analytics Processing
+- CLR: Common Language Runtime
+- SSRS: SQL Server Reporting Services
+- SSIS: SQL Server Integration Services
+- ETL: Extract, Transform, Load
+- ETW: Event Tracing for Windows
+- DML: Data Manipulation Language
+- DDL: Data Definition Language
 
 ## Tables
 
@@ -77,8 +90,9 @@ Links
 - <sup>85</sup> [Partitioned Tables and Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/partitions/partitioned-tables-and-indexes?view=sql-server-2017)
 - <sup>120</sup> [Understanding the SQL Server NOLOCK hint](https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/)
 - <sup>127</sup> [Faster temp table and table variable by using memory optimization](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/faster-temp-table-and-table-variable-by-using-memory-optimization?view=sql-server-2017)
+- <sup>153</sup> [A Guide to Query Processing for Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables?view=sql-server-2017), [Sample Database for In-Memory OLTP](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/sample-database-for-in-memory-oltp?view=sql-server-2017)
 
-Related Questions: <sup>80,86,120,122,127</sup>
+Related Questions: <sup>80,86,120,122,127,153</sup>
 
 ## Options
 
@@ -97,6 +111,7 @@ Links:
 - [Reorganize and Rebuild Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-2017)
 - [Columnstore indexes: Overview](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/columnstore-indexes-overview?view=sql-server-2017)
 - [Create Filtered Indexes](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/create-filtered-indexes?view=sql-server-2017)
+- [UPDATE STATISTICS (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/update-statistics-transact-sql?view=sql-server-2017)
 
 Related Questions: <sup>62,63,64,70,72,77,81,92,93,94,97,102,107,111,117,126,132,136,137,146</sup>
 
@@ -111,7 +126,7 @@ Related Questions: <sup>68,78,101,116,124</sup>
 
 ## Transactions
 
-Related Questions: <sup>65,66,82,84,87,95,96,103,106,114,121,123,128,129,140</sup>
+Related Questions: <sup>65,66,82,84,87,95,96,103,106,114,121,123,128,129,140,154</sup>
 
 - <sup>123</sup> **XACT_STATE** Is a scalar function that reports the user transaction state of a current running request. XACT_STATE indicates whether the request has an active user transaction, and whether the transaction is capable of being committed. **XACT_ABORT** must be ON to rollback transactions. Values:
   - 1: The current request has an active user transaction. The request can perform any actions, including writing data and committing the transaction.
@@ -123,6 +138,7 @@ Related Questions: <sup>65,66,82,84,87,95,96,103,106,114,121,123,128,129,140</su
   - [SET TRANSACTION ISOLATION LEVEL (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql?view=sql-server-2017)
 - <sup>96</sup> [Transactions with Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/transactions-with-memory-optimized-tables?view=sql-server-2017)
 - [SAVE TRANSACTION (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/save-transaction-transact-sql?view=sql-server-2017&viewFallbackFrom=sql-ser)
+- [SET IMPLICIT_TRANSACTIONS (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql?view=sql-server-2017)
 
 ## Functions / Stored Procedures
 
@@ -135,7 +151,7 @@ Links:
 - <sup>105</sup> [A Guide to Query Processing for Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables?view=sql-server-2017)
 - <sup>135</sup> [Using a Stored Procedure with Output Parameters](https://docs.microsoft.com/en-us/sql/connect/jdbc/using-a-stored-procedure-with-output-parameters?view=sql-server-2017)
 
-Related Questions: <sup>73,74,75,79,98,100,105,106,108,135</sup>
+Related Questions: <sup>73,74,75,79,98,100,105,106,108,135,150</sup>
 
 ## Constraints
 
@@ -178,11 +194,11 @@ Links:
 - <sup>119</sup> [Create Indexed Views](https://docs.microsoft.com/en-us/sql/relational-databases/views/create-indexed-views?view=sql-server-2017)
 - <sup>125</sup> [Creating and Optimizing Views in SQL Server](http://www.informit.com/articles/article.aspx?p=130855&seqNum=4)
 
-Related Questions: <sup>83,119,138,139,143</sup>
+Related Questions: <sup>83,119,138,139,143,147,148,151,152</sup>
 
 ## Other
 
-Related Questions: <sup>71,75,76,82,84,104,112</sup>
+Related Questions: <sup>71,75,76,82,84,104,110,112,113,133,134,142,144,149</sup>
 
 If many related entries appear, they can be merged into a single category.
 
@@ -211,3 +227,7 @@ If many related entries appear, they can be merged into a single category.
 - [Set Operators - UNION (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/set-operators-union-transact-sql?view=sql-server-2017)
 - <sup>142</sup> [SQL Server Extended Events Targets](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-extended-events-targets?view=sql-server-2014)
 - <sup>144</sup> [Dynamic Data Masking](https://docs.microsoft.com/en-us/sql/relational-databases/security/dynamic-data-masking?view=sql-server-2017)
+- <sup>149</sup> [SET SHOWPLAN_ALL (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-showplan-all-transact-sql?view=sql-server-2017)
+- <sup>150</sup> [ALTER DATABASE (Transact-SQL) Compatibility Level](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017)
+- <sup>153</sup> [Explanation of SQL Server IO and Latches](https://www.mssqltips.com/sqlservertip/3088/explanation-of-sql-server-io-and-latches/)
+- <sup>155</sup> [Always On availability groups: a high-availability and disaster-recovery solution](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server)
