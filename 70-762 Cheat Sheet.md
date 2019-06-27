@@ -62,10 +62,10 @@ All the links below are useful for questions that have appeared in past exams.
 
 - [CREATE FUNCTION (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql?view=sql-server-2017)
 - [User Defined Functions and Stored Procedures](https://docs.microsoft.com/en-us/sql/analysis-services/multidimensional-models-adomd-net-server/user-defined-functions-and-stored-procedures?view=sql-server-2017)
-- <sup>98</sup> [Use Table-Valued Parameters (Database Engine)](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine?view=sql-server-2017)
-- <sup>100</sup> [Return Data from a Stored Procedure](https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/return-data-from-a-stored-procedure?view=sql-server-2017)
-- <sup>105</sup> [A Guide to Query Processing for Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables?view=sql-server-2017)
-- <sup>135</sup> [Using a Stored Procedure with Output Parameters](https://docs.microsoft.com/en-us/sql/connect/jdbc/using-a-stored-procedure-with-output-parameters?view=sql-server-2017)
+- [Use Table-Valued Parameters (Database Engine)](https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-table-valued-parameters-database-engine?view=sql-server-2017)
+- [Return Data from a Stored Procedure](https://docs.microsoft.com/en-us/sql/relational-databases/stored-procedures/return-data-from-a-stored-procedure?view=sql-server-2017)
+- [A Guide to Query Processing for Memory-Optimized Tables](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables?view=sql-server-2017)
+- [Using a Stored Procedure with Output Parameters](https://docs.microsoft.com/en-us/sql/connect/jdbc/using-a-stored-procedure-with-output-parameters?view=sql-server-2017)
 
 ---
 
